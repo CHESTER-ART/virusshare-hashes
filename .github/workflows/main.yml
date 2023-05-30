@@ -1,1 +1,16 @@
+name: Run Python Script
 
+on: [push] # Запустить действие при каждом пуше в репозиторий
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest # Версия ОС, на которой будет выполняться действие
+    
+    steps:
+    - uses: actions/checkout@v2 # Клонирование содержимого репозитория
+    - name: Set up Python environment # Установка интерпретатора и зависимостей
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Run script.py # Запуск скрипта
+      run: python generate.py
