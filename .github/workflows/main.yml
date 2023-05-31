@@ -17,3 +17,9 @@ jobs:
           pip3 install -r requirements.txt
       - name: Run script
         run: python3 generate.py
+# add line
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: virushashes.txt
+          path: virushashes.txt
